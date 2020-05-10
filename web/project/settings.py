@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app', #追加
+    'crispy_forms',  #追加
 ]
 
 MIDDLEWARE = [
@@ -132,6 +133,7 @@ STATIC_URL = '/static/'
 LOGIN_URL='admin:login'
 LOGOUT_REDIRECT_URL='/'
 
-
+# django-crispy-forms 設定
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
