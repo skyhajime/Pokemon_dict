@@ -22,3 +22,4 @@ class ItemForm(forms.ModelForm):
                     's': forms.NumberInput(attrs={'min':1}),
                     'memo': forms.Textarea(attrs={'rows':4}),
                   }
+

@@ -5,7 +5,7 @@ from django.views.generic import ListView, DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django_filters.views import FilterView
 
-from .models import Item, Image
+from .models import Item
 from .filters import ItemFilter
 from .forms import ItemForm
 
@@ -61,8 +61,3 @@ class ItemDeleteView(LoginRequiredMixin, DeleteView):
     model = Item
     success_url = reverse_lazy('index')
 
-class ImageShow(LoginRequiredMixin):
-    def showall(self, request):    
-        images = Image.objects.all()
-        context = {"images":images}
-        return render(request, "app/showall.html")

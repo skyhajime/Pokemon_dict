@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import ItemFilterView, ItemDetailView, ItemCreateView, ItemUpdateView, ItemDeleteView, ImageShow
+from .views import ItemFilterView, ItemDetailView, ItemCreateView, ItemUpdateView, ItemDeleteView
 
 
 urlpatterns = [
@@ -13,6 +13,4 @@ urlpatterns = [
     path('update/<int:pk>/', ItemUpdateView.as_view(), name='update'),
     # 削除画面
     path('delete/<int:pk>/', ItemDeleteView.as_view(), name='delete'),
-    #画像
-    path('showall/', ImageShow.showall, name='showall'),
 ]

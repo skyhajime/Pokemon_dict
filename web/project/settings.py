@@ -14,6 +14,9 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+IMAGE_ROOT = os.path.join(BASE_DIR, 'images')
+IMAGE_URL = '/images/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
@@ -24,7 +27,7 @@ SECRET_KEY = '9f&e5^slx085&o-se6k%gbi!@#6@gs0km(bv*sjor((vrv3+x7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', 'skyhajime.pythonanywhere.com']
 
 
 # Application definition
@@ -78,11 +81,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pokemon',
-        "USER": "root",
-        "PASSWORD": "happy0808",
-        'HOST': 'localhost',
-        'PORT': '3306',
+        'NAME': 'skyhajime$mysite',
+        "USER": "skyhajime",
+        "PASSWORD": "",
+        'HOST': 'skyhajime.mysql.pythonanywhere-services.com',
+        'PORT': '',
         'OPTIONS': {
             'charset': 'utf8mb4',
             'sql_mode': 'TRADITIONAL,NO_AUTO_VALUE_ON_ZERO,ONLY_FULL_GROUP_BY',
@@ -129,6 +132,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+
 # 管理サイトのログイン機能を通常のログイン機能として使う
 LOGIN_URL='admin:login'
 LOGOUT_REDIRECT_URL='/'
@@ -136,4 +140,3 @@ LOGOUT_REDIRECT_URL='/'
 # django-crispy-forms 設定
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
